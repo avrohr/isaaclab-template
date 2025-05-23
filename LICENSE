@@ -19,3 +19,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+Third-Party Notice
+
+This repository includes certain files from the Isaac Lab Project, which are licensed under the BSD 3-Clause License.
+
+These files are clearly marked with the following header:
+
+    Copyright (c) 2022-2025, The Isaac Lab Project Developers.
+    All rights reserved.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+These files remain under the terms of the BSD-3-Clause license. Redistribution and use of these files must comply with the conditions of that license. For details, see: https://opensource.org/licenses/BSD-3-Clause
