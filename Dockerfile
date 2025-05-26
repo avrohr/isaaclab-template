@@ -1,7 +1,3 @@
-###############################################################################
-# Dockerfile for rlc project (Robust Locomotion Control)                          #
-###############################################################################
-
 # 1. Base on NVIDIA Isaac Sim runtime
 ARG BASE_IMAGE=nvcr.io/nvidia/isaac-sim:4.5.0 
 FROM ${BASE_IMAGE}
@@ -41,6 +37,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
     uv sync --locked --no-install-project
 
+
 VOLUME ["${WORKDIR}/.venv"]
 
 ENV PATH="${WORKDIR}/.venv/bin:$PATH"
@@ -52,4 +49,4 @@ RUN chmod +x /entrypoint.sh
 # EXPOSE 8888
 
 # 9. Override isaacsim entrypoint
-# ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

@@ -46,6 +46,14 @@ Test the training run
 sudo docker run --rm --gpus all -v "$(pwd)":/src isaac:test src/rsl_rl/train.py --task=Isaac-Cartpole-Custom-Direct-v0 --headless
 ```
 
+If you update a dependency (including IsaacLab) you need to run an upgrade before building the docker container.
+
+```bash
+uv lock --upgrade
+sudo docker build -t isaac:test .
+```
+
+
 ---
 
 ## Project Layout
