@@ -1,5 +1,5 @@
 [project]
-name = "rlc"
+name = "isaac-uv-template"
 version = "0.1.0"
 description = "Template project for IsaacLab with uv"
 readme = "README.md"
