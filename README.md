@@ -37,7 +37,7 @@ sudo docker build -t isaac:test .
 Open an interactive shell (optional)
 
 ```bash
-sudo docker run -it --entrypoint bash --gpus all isaac:test
+sudo docker run -it --entrypoint bash --gpus all -v "$(pwd)":/src  isaac:test
 ```
 
 Test the training run

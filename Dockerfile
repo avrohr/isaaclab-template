@@ -34,7 +34,7 @@ ENV UV_PROJECT_ENVIRONMENT=/venv
 # 6. Copy all editable IsaacLab sources in one go
 COPY IsaacLab/source ./IsaacLab/source
 
-RUN uv venv /opt/venv
+RUN uv venv /venv
 
 # 7. Install dependencies from lockfile
 ENV UV_LINK_MODE=copy
