@@ -27,8 +27,14 @@ ARG WORKDIR=/src
 WORKDIR ${WORKDIR}
 COPY pyproject.toml uv.lock ./
 
+RUN mkdir -p /venv
+ENV VIRTUAL_ENV=/venv
+ENV UV_PROJECT_ENVIRONMENT=/venv
+
 # 6. Copy all editable IsaacLab sources in one go
 COPY IsaacLab/source ./IsaacLab/source
+
+RUN uv venv /opt/venv
 
 # 7. Install dependencies from lockfile
 ENV UV_LINK_MODE=copy
@@ -38,9 +44,8 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-install-project
 
 
-VOLUME ["${WORKDIR}/.venv"]
-
-ENV PATH="${WORKDIR}/.venv/bin:$PATH"
+# VOLUME ["${WORKDIR}/.venv"]
+# ENV PATH="${WORKDIR}/.venv/bin:$PATH"
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
