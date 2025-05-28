@@ -23,7 +23,7 @@ RUN pip install --upgrade pip setuptools \
  && pip install uv
 
 # 5. Set up workspace and copy lockfiles for layer caching
-ARG WORKDIR=/src
+ARG WORKDIR=/workspace/isaaclab
 WORKDIR ${WORKDIR}
 COPY pyproject.toml uv.lock ./
 
